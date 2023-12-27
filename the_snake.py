@@ -79,8 +79,7 @@ class Apple(GameObject):
         """
         self.position = (
             choice(range(0, SCREEN_WIDTH, GRID_SIZE)),
-            choice(range(0, SCREEN_HEIGHT, GRID_SIZE))
-            )
+            choice(range(0, SCREEN_HEIGHT, GRID_SIZE)))
 
     def __init__(self):
         """
@@ -138,8 +137,7 @@ class Snake(GameObject):
         dx, dy = self.direction
         new_pos = (
             ((head[0] + (dx * GRID_SIZE)) % SCREEN_WIDTH),
-            (head[1] + (dy * GRID_SIZE)) % SCREEN_HEIGHT
-            )
+            (head[1] + (dy * GRID_SIZE)) % SCREEN_HEIGHT)
         if len(self.positions) > 2 and new_pos in self.positions[2:]:
             self.reset()
         else:
@@ -221,8 +219,6 @@ def main():
         apple.draw(surface)
         screen.blit(surface, (0, 0))
         pygame.display.update()
-
-    pygame.quit()
 
 
 if __name__ == '__main__':
